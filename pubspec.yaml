@@ -1,7 +1,7 @@
 name: gyroscopic_card
 description: "Gyroscopic Card is a Flutter package that provides an interactive, gyroscope-responsive card widget. This widget creates a unique 3D tilting effect, rotating smoothly based on device orientation, offering an engaging and visually appealing experience to users. It’s ideal for use in apps that want to add a touch of immersive, real-world interaction to their interfaces."
 version: 0.0.1
-homepage: 
+homepage: https://github.com/aashray374/gyroscopic_card
 
 environment:
   sdk: ^3.5.4

@@ -11,29 +11,61 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Gyroscopic Card
+
+Gyroscopic Card is a Flutter package that provides an interactive, gyroscope-responsive card widget. It adds a realistic 3D tilting effect based on device orientation, making it ideal for applications aiming to create an immersive and interactive user experience.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Gyroscope-Based Rotation**: Adds real-time rotation based on device orientation.
+- **Customizable Sensitivity and Rotation Limits**: Fine-tune rotation sensitivity and maximum tilt angle to match your design.
+- **Flexible Card Properties**: Customize appearance, including elevation, shape, color, and shadow.
+- **Supports Any Child Widget**: Easily integrate text, images, or any widget inside the gyroscopic card.
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, ensure you have Flutter set up and add the package to your `pubspec.yaml` file.
 
+```yaml
+dependencies:
+  gyroscopic_card: ^1.0.0
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Wrap any widget with GyroscopicCard to add gyroscope-driven tilt effects. Here’s a basic example
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:gyroscopic_card/gyroscopic_card.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: GyroscopicCard(
+            sensitivity: 0.05,
+            maxAngleRadians: 0.785, // 45 degrees in radians
+            child: Container(
+              width: 250,
+              height: 350,
+              alignment: Alignment.center,
+              child: Text(
+                'Gyroscopic Card',
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
+            cardProperties: Card(
+              elevation: 8,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
